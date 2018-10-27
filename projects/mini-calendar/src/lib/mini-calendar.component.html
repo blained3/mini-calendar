@@ -1,0 +1,11 @@
+<div class="mini-calendar-component">
+	<div class="header layout-row layout-align-center-center" [ngStyle]="{'background-color': mainColor}">
+		<i class="fas fa-chevron-left" (click)="previous()"></i>
+		<span>{{month.format("MMM YYYY")}}</span>
+		<i class="fas fa-chevron-right" (click)="next()"></i>
+	</div>
+	<div class="week" *ngFor="let week of weeks">
+		<span class="day" [ngStyle]="getBgColor(day)" [ngClass]="{ 'different-month': !day.isCurrentMonth }"
+			(click)="select(day)" *ngFor="let day of week.days">{{day.numb}}</span>
+	</div>
+</div>

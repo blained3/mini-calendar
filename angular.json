@@ -133,6 +133,41 @@
           }
         }
       }
+    },
+    "mini-calendar": {
+      "root": "projects/mini-calendar",
+      "sourceRoot": "projects/mini-calendar/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/mini-calendar/tsconfig.lib.json",
+            "project": "projects/mini-calendar/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mini-calendar/src/test.ts",
+            "tsConfig": "projects/mini-calendar/tsconfig.spec.json",
+            "karmaConfig": "projects/mini-calendar/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mini-calendar/tsconfig.lib.json",
+              "projects/mini-calendar/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ng-mini-calendar"

@@ -3,12 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { MiniCalendarModule } from 'mini-calendar';
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    MiniCalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

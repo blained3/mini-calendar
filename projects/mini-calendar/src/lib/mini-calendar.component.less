@@ -1,0 +1,94 @@
+// @main-color: #03a9f4;
+// @secondary-color: #ff5722;
+
+.vertical-center (@height) {
+	height:@height;
+	line-height:@height !important;
+	display:inline-block;
+	vertical-align:middle;
+}
+
+.border-box {
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+}
+.mini-calendar-component {
+	float:left;
+	display:block;
+	.border-box;
+	background:white;
+	width:190px;
+	border:solid 1px #CCC;
+
+	>div.header {
+		display: flex;
+		justify-content: space-between;
+		width:100%;
+		height:40px;
+		color:white;
+		border-bottom:solid 1px #CCC;
+
+		>* {
+			.vertical-center(40px);
+		}
+
+		>i {
+			float:left;
+			width:30px;
+			font-weight:bold;
+			position:relative;
+			.border-box;
+			padding:0 0px;
+			cursor:pointer;
+		}
+
+		>span {
+			float:left;
+			font-weight:bold;
+			text-transform:uppercase;
+			.border-box;
+			text-align:center;
+			color:inherit;
+		}
+	}
+	>div.week {
+		float:left;
+		width:100%;
+
+		&:first-child {
+			border-top:none;
+		}
+
+		>span.day {
+			float:left;
+			width:100%/7;
+			.border-box;
+			font-size:0.75em;
+			text-align:center;
+			.vertical-center(30px);
+			background:white;
+			cursor:pointer;
+			color:black;
+
+			&:first-child {
+				border-left:none;
+			}
+
+			&.different-month {
+				color:#C0C0C0;
+			}
+
+			// &.selected {
+			// 	background:@secondary-color;
+			// 	color:white;
+			// }
+
+		}
+
+		// &.names>span {
+		// 	color:@main-color;
+		// 	font-weight:bold;
+		// 	border-bottom:solid 1px #CCC;
+		// }
+	}
+}

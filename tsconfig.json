@@ -16,6 +16,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "mini-calendar": [
+        "dist/mini-calendar"
+      ],
+      "mini-calendar/*": [
+        "dist/mini-calendar/*"
+      ]
+    }
   }
 }
